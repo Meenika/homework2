@@ -121,6 +121,8 @@ func Initials(firstName, lastName string) string {
 		firstName = strings.ToLower(firstName)
 		LetterBig := []rune(firstName)
 		return strings.ToUpper(string(LetterBig[0]))
+	} else if firstName == "" && lastName == "" {
+		return ""
 	} else {
 		firstName = strings.ToLower(firstName)
 		lastName = strings.ToLower(lastName)

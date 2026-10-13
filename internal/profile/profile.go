@@ -21,8 +21,9 @@ func BuildUserCard(name string, age int, active bool) string {
 	if name == "" {
 		name = "Unknown"
 	} else {
-		name = strings.ToLower(name)
-		name = strings.ToUpper(name[0:1]) + name[1:]
+		runes := []rune(strings.ToLower(name))
+		runes[0] = []rune(strings.ToUpper(string(runes[0])))[0]
+		name = string(runes)
 	}
 
 	if age >= 18 {
